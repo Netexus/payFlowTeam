@@ -24,10 +24,10 @@
 
 | Nombre                        | Rol                      | Responsabilidad principal                            |
 |-------------------------------|---------------------------------------------------------------------------------|
-| Estudiante 1 — _(reemplazar)_ | Arquitecto de solución   | Diseño del modelo C4, ADR-01 y ADR-02                |
-| Estudiante 2 — _(reemplazar)_ | Desarrollador backend    | Azure Functions en Node.js y script generador Python |
-| Estudiante 3 — _(reemplazar)_ | Ingeniero de datos       | Cosmos DB, Service Bus y configuración de Event Hubs |
-| Estudiante 4 — _(reemplazar)_ | Ingeniero de operaciones | Azure Monitor, App Insights, ADR-05 y evidencias     |
+| Monica Atehortua              | Arquitecto de solución   | Diseño del modelo C4, ADR-01 y ADR-02                |
+| Luis Martínez                 | Desarrollador backend    | Azure Functions en Node.js y script generador Python |
+| David Torres                  | Ingeniero de datos       | Cosmos DB, Service Bus y configuración de Event Hubs |
+| Brayan Ceballos               | Ingeniero de operaciones | Azure Monitor, App Insights, ADR-05 y evidencias     |
 
 ---
 
