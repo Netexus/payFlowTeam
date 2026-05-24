@@ -110,17 +110,18 @@ PayFlow/
 
 ### C1 — Contexto
 
-_(Diagrama C1 pendiente)_
+<img width="736" height="547" alt="c1" src="https://github.com/user-attachments/assets/ca105b21-13a5-488d-9d1b-b4b0e833a5bc" />
+
 
 ### C2 — Contenedores
 
-_(Diagrama C2 pendiente)_
+<img width="794" height="538" alt="c2" src="https://github.com/user-attachments/assets/2f423346-e19b-40c2-9c87-66a5bbafd883" />
+
 
 ### C3 — Componentes
 
-_(Diagrama C3 pendiente)_
+<img width="1536" height="472" alt="c3" src="https://github.com/user-attachments/assets/3b694909-fdaf-4ab2-ab85-2a07846972cc" />
 
----
 
 ## Decisiones Arquitectónicas (ADRs)
 
