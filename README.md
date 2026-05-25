@@ -194,6 +194,7 @@ del sistema en tiempo real.
 Consulta de trazas (Logs)
 
 <img width="921" height="415" alt="image" src="https://github.com/user-attachments/assets/36235029-4937-4c70-9d50-a38e62aa3698" />
+
 Consulta de solicitudes
 
 <img width="921" height="239" alt="image" src="https://github.com/user-attachments/assets/560f9ecf-129e-4396-ba45-ccf1a21c86a5" />
