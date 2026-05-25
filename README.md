@@ -162,6 +162,43 @@ del flujo crítico y monitoreo cloud._
 |  4   | Function registra resultado final en Cosmos DB                          | Cosmos DB                            | ✅ Implementado |
 |  5   | Azure Monitor muestra métricas del flujo en tiempo real                 | Azure Monitor                        | ✅ Implementado |
 
+Generación de eventos con Python y Event Hubs
+
+Se implementó un script en Python encargado de simular transacciones bancarias en tiempo real.
+
+El script genera eventos aleatorios con información como:
+
+cliente
+monto
+tipo de transacción
+
+Posteriormente, los eventos son enviados a Azure Event Hubs utilizando el SDK oficial de Azure para Python.
+
+Estas transacciones activan automáticamente el flujo serverless implementado en Azure:
+
+Azure Function procesa el evento.
+Se valida si la transacción es de alto valor.
+Las transacciones mayores a $5.000.000 COP se envían a Azure Service Bus.
+Todas las transacciones son almacenadas en Cosmos DB.
+Azure Monitor y Application Insights registran las métricas y logs del sistema.
+
+Evidencias obtenidas
+
+Durante la ejecución del script se validó:
+
+✅ Envío correcto de eventos a Event Hubs
+✅ Activación automática de Azure Functions
+✅ Registro de transacciones en Cosmos DB
+✅ Enrutamiento de transacciones de alto valor a Service Bus
+✅ Generación de métricas y logs en Azure Monitor y Application Insights
+
+<img width="867" height="961" alt="image" src="https://github.com/user-attachments/assets/e45bbb6c-9c07-4a2e-940e-43805a4a74b8" />
+
+
+
+
+
+
 Evidencia — Azure Functions
 
 La Azure Function procesa transacciones financieras,
