@@ -162,30 +162,48 @@ _(Pendiente)_
 |  5   | Azure Monitor muestra métricas del flujo en tiempo real                 | Azure Monitor                        | ✅ Implementado |
 
 Evidencia — Azure Functions
+
 La Azure Function procesa transacciones financieras,
 valida el monto y enruta operaciones de alto valor.
+
 <img width="921" height="214" alt="image" src="https://github.com/user-attachments/assets/390c7a26-9a38-4aea-9878-380cfe4d3b72" />
+
 Evidencia — Azure Service Bus
+
 Las transacciones superiores a $5.000.000 COP
 son enviadas automáticamente a la cola
 de alto valor.
+
 <img width="921" height="253" alt="image" src="https://github.com/user-attachments/assets/311554a2-3b2b-4857-9e74-51b19f7aa36d" />
+
 Evidencia — Cosmos DB
+
 Las transacciones procesadas son almacenadas
 en Cosmos DB para persistencia y consulta.
+
 <img width="921" height="320" alt="image" src="https://github.com/user-attachments/assets/72082c38-71e4-4e26-8a6c-146f88f6bcde" />
+
 Evidencia — Azure Monitor
+
 Azure Monitor y Application Insights permiten
 visualizar logs, solicitudes, errores y métricas
 del sistema en tiempo real.
+
 <img width="921" height="346" alt="image" src="https://github.com/user-attachments/assets/68df3d1e-8b4d-4b37-aac2-93f72c55f3b7" />
+
 Consulta de trazas (Logs)
+
 <img width="921" height="415" alt="image" src="https://github.com/user-attachments/assets/36235029-4937-4c70-9d50-a38e62aa3698" />
 Consulta de solicitudes
+
 <img width="921" height="239" alt="image" src="https://github.com/user-attachments/assets/560f9ecf-129e-4396-ba45-ccf1a21c86a5" />
+
 Consulta de errores
+
 <img width="921" height="280" alt="image" src="https://github.com/user-attachments/assets/694e78e7-bc7a-4847-94fe-600d933281b3" />
+
 Consulta de operaciones exitosas
+
 <img width="921" height="196" alt="image" src="https://github.com/user-attachments/assets/7c52670d-7133-4130-8a22-6303468b4eb8" />
 
 
