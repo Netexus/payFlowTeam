@@ -156,7 +156,7 @@ del flujo crítico y monitoreo cloud._
 
 | Paso | Acción                                                                  | Servicio                             | Estado          |
 |------|-------------------------------------------------------------------------|--------------------------------------|-----------------|
-|  1   | Script Python genera eventos de transacción y los publica en Event Hubs | Azure Event Hubs                     | ⏳ Pendiente    |
+|  1   | Script Python genera eventos de transacción y los publica en Event Hubs | Azure Event Hubs                     | ✅ Implementado  |
 |  2   | Function valida formato y aplica regla antifraude básica                | Azure Functions — validarTransaccion | ✅ Implementado |
 |  3   | Si monto > $5M COP, enruta a cola de alto valor en Service Bus          | Azure Service Bus                    | ✅ Implementado |
 |  4   | Function registra resultado final en Cosmos DB                          | Cosmos DB                            | ✅ Implementado |
