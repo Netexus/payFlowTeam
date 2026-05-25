@@ -145,7 +145,7 @@ _(Pendiente)_
 
 ### ADR-05: Azure Monitor vs solución de observabilidad de terceros
 
-_(Pendiente)_
+<img width="934" height="818" alt="image" src="https://github.com/user-attachments/assets/d638f619-b7fe-428a-be6e-646eaac90190" />
 
 ---
 
