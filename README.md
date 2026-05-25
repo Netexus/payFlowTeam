@@ -169,8 +169,11 @@ Se implementó un script en Python encargado de simular transacciones bancarias 
 El script genera eventos aleatorios con información como:
 
 cliente
+
 monto
+
 tipo de transacción
+
 
 Posteriormente, los eventos son enviados a Azure Event Hubs utilizando el SDK oficial de Azure para Python.
 
@@ -187,10 +190,15 @@ Evidencias obtenidas
 Durante la ejecución del script se validó:
 
 ✅ Envío correcto de eventos a Event Hubs
+
 ✅ Activación automática de Azure Functions
+
 ✅ Registro de transacciones en Cosmos DB
+
 ✅ Enrutamiento de transacciones de alto valor a Service Bus
+
 ✅ Generación de métricas y logs en Azure Monitor y Application Insights
+
 
 <img width="867" height="961" alt="image" src="https://github.com/user-attachments/assets/e45bbb6c-9c07-4a2e-940e-43805a4a74b8" />
 
