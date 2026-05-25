@@ -151,7 +151,8 @@ _(Pendiente)_
 
 ## Implementación — Flujo crítico
 
-> _Sección en construcción — las evidencias se agregarán conforme avance la implementación._
+> _Sección actualizada con evidencias de implementación
+del flujo crítico y monitoreo cloud._
 
 | Paso | Acción                                                                  | Servicio                             | Estado          |
 |------|-------------------------------------------------------------------------|--------------------------------------|-----------------|
