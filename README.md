@@ -527,7 +527,13 @@ del sistema en tiempo real.
 
 ## Conclusiones
 
-> _Sección pendiente — se completará al finalizar la implementación._
+El desarrollo del caso PayFlow permitió diseñar e implementar una arquitectura cloud orientada a eventos utilizando servicios de Microsoft Azure, enfocada en el procesamiento de transacciones financieras en tiempo real.
+
+La solución propuesta logró desacoplar el flujo transaccional mediante Azure Event Hubs, Azure Functions, Service Bus y Cosmos DB, mejorando la escalabilidad, resiliencia y capacidad de procesamiento ante altos volúmenes de eventos.
+
+Además, la integración de Azure Monitor y Application Insights permitió incorporar observabilidad centralizada, facilitando el monitoreo de métricas, logs y errores del sistema en tiempo real.
+
+El uso del modelo C4 y de los ADRs permitió documentar la arquitectura y justificar técnicamente las decisiones tomadas durante el proyecto, alineando la solución con buenas prácticas de arquitecturas event-driven y computación serverless en entornos cloud.
 
 ---
 
