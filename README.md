@@ -207,15 +207,212 @@ Azure Event-Driven Architecture Patterns
 
 ### ADR-02: Azure Functions vs Azure Stream Analytics
 
-_(Pendiente)_
+## Estado
+Aceptado
+
+## Contexto
+
+PayFlow requiere validar transacciones, aplicar reglas antifraude básicas, enrutar operaciones de alto valor y registrar resultados finales en una base de datos de baja latencia.
+
+El equipo necesita una capa de procesamiento que pueda reaccionar a eventos en tiempo real y ejecutar lógica personalizada sobre cada transacción.
+
+Las alternativas evaluadas fueron:
+
+Azure Functions
+Azure Stream Analytics
+
+## Decisión
+
+Se decidió utilizar Azure Functions como componente principal de procesamiento del flujo de transacciones.
+
+Azure Functions recibirá eventos desde Azure Event Hubs, ejecutará validaciones de formato y reglas antifraude básicas, enrutarará las transacciones de alto valor hacia Azure Service Bus y persistirá el resultado final en Cosmos DB.
+
+Azure Stream Analytics no fue seleccionado como componente principal porque el caso requiere lógica personalizada, control por transacción y mayor flexibilidad en el procesamiento de eventos.
+
+## Consecuencias
+
+### Positivas
+
+ Procesamiento serverless bajo demanda
+ Integración directa con Event Hubs y Service Bus
+ Flexibilidad para lógica personalizada en Node.js
+ Escalado automático según carga
+ Menor complejidad operativa
+
+### Negativas
+
+Puede requerir más código que una solución puramente declarativa
+Depende de una buena estrategia de manejo de errores
+El monitoreo y trazabilidad deben configurarse explícitamente
+
+## Alternativas consideradas
+
+### Azure Stream Analytics
+
+**Ventajas:**
+Muy útil para análisis de streaming
+Configuración declarativa
+Buen soporte para consultas sobre flujos
+
+**Desventajas:**
+Menor flexibilidad para lógica transaccional personalizada
+No es la opción más directa para reglas de negocio por evento
+Menos conveniente para enrutar casos específicos con lógica de aplicación
+
+## Referencias
+
+ Azure Functions Documentation
+ Azure Stream Analytics Documentation
+ Serverless computing patterns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### ADR-03: Cosmos DB vs Azure SQL Database
 
-_(Pendiente)_
+## Estado
+Aceptado
+
+## Contexto
+
+PayFlow necesita almacenar el estado final de las transacciones procesadas por la plataforma, con baja latencia, alta concurrencia y capacidad de crecimiento continuo.
+
+El sistema maneja un volumen alto de eventos y necesita persistencia flexible para registros transaccionales, resultados de procesamiento y consultas operativas.
+
+Las alternativas evaluadas fueron:
+
+Azure Cosmos DB
+Azure SQL Database
+
+## Decisión
+
+Se decidió utilizar Azure Cosmos DB como sistema principal de persistencia para las transacciones procesadas.
+
+Cosmos DB permitirá almacenar y consultar los resultados del flujo de eventos con baja latencia, escalabilidad horizontal y un modelo de datos flexible, adecuado para una arquitectura orientada a eventos.
+
+Azure SQL Database no fue seleccionada como opción principal porque el escenario prioriza distribución, elasticidad y alto volumen de escritura por encima de un modelo relacional tradicional.
+
+## Consecuencias
+
+### Positivas
+
+Baja latencia en lectura y escritura
+Escalabilidad horizontal
+Alta disponibilidad distribuida
+Modelo flexible para documentos JSON
+Integración adecuada con arquitecturas event-driven
+Buen ajuste para cargas variables e impredecibles
+
+### Negativas
+
+Modelado más cuidadoso de particiones
+Costos ligados a capacidad y consumo
+Menor naturalidad para consultas relacionales complejas
+Requiere diseño explícito de partition key
+
+## Alternativas consideradas
+
+### Azure SQL Database
+
+**Ventajas:**
+ Modelo relacional maduro
+ SQL tradicional
+ Buen soporte para integridad relacional
+ Útil para consultas complejas con joins
+
+**Desventajas:**
+Menor flexibilidad para datos semiestructurados
+Escalabilidad menos natural para cargas muy variables
+Menor adecuación para flujos de eventos de alta concurrencia
+
+## Referencias
+
+Azure Cosmos DB Documentation
+Azure SQL Database Documentation
+Cloud-native persistence patterns
+
+
+
 
 ### ADR-04: Service Bus vs Storage Queue para alto valor
 
-_(Pendiente)_
+## Estado
+Aceptado
+
+## Contexto
+
+PayFlow procesa transacciones financieras en tiempo real y necesita tratar de forma especial las operaciones de alto valor, definidas en el proyecto como transacciones superiores a $5.000.000 COP.
+
+Estas operaciones requieren mayor confiabilidad, priorización y control de errores que una cola básica.
+
+Las alternativas evaluadas fueron:
+
+Azure Service Bus
+Azure Storage Queue
+
+## Decisión
+
+Se decidió utilizar Azure Service Bus para encolar y procesar las transacciones de alto valor.
+
+Azure Service Bus ofrece capacidades empresariales de mensajería que permiten priorizar operaciones críticas, controlar reintentos, manejar errores mediante dead-letter queues y desacoplar la lógica de procesamiento.
+
+Azure Storage Queue no fue seleccionada como mecanismo principal para este caso debido a sus limitaciones en control avanzado de mensajes y priorización.
+
+## Consecuencias
+
+### Positivas
+
+Mayor confiabilidad en el procesamiento
+Mejor control de mensajes críticos
+Retries automáticos
+Dead-letter queue para errores
+Integración nativa con Azure Functions
+Adecuado para flujos financieros sensibles
+
+### Negativas
+
+ Mayor complejidad de configuración
+ Costos algo superiores a una cola básica
+ Requiere una administración más cuidadosa
+
+## Alternativas consideradas
+
+### Azure Storage Queue
+
+**Ventajas:**
+Más simple de configurar
+Costo más bajo
+Buena integración con Azure
+
+**Desventajas:**
+Menor soporte para mensajería empresarial
+Sin priorización avanzada
+Menor control para escenarios financieros críticos
+
+## Referencias
+
+Azure Service Bus Documentation
+Azure Queue Storage Documentation
+Messaging reliability patterns
+
 
 ### ADR-05: Azure Monitor vs solución de observabilidad de terceros
 
