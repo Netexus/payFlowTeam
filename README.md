@@ -129,7 +129,81 @@ PayFlow/
 
 ### ADR-01: Azure Event Hubs vs Azure Service Bus como punto de entrada
 
-_(Pendiente)_
+# ADR-01: Azure Event Hubs vs Azure Service Bus como punto de entrada
+
+## Estado
+Aceptado
+
+## Contexto
+
+PayFlow procesa transacciones digitales en tiempo real para pequeños y medianos comercios en Colombia, Ecuador y Perú. La plataforma presenta picos de hasta 260.000 transacciones diarias y actualmente enfrenta problemas de escalabilidad en momentos de alta demanda.
+
+El sistema necesita un mecanismo de entrada capaz de recibir grandes volúmenes de eventos sin generar cuellos de botella, permitiendo desacoplar los productores de eventos del procesamiento posterior.
+
+El equipo evaluó dos alternativas para el punto principal de entrada del sistema:
+
+Azure Event Hubs
+Azure Service Bus
+
+## Decisión
+
+Se decidió utilizar Azure Event Hubs como punto de entrada principal de eventos para la plataforma PayFlow.
+
+Azure Event Hubs actuará como buffer distribuido de eventos, recibiendo el flujo de transacciones generadas por el sistema y permitiendo su procesamiento asíncrono por los componentes posteriores de Azure Functions, Service Bus y Cosmos DB.
+
+Azure Service Bus no se utilizará como punto de entrada principal, sino como mecanismo complementario para flujos críticos y transacciones de alto valor.
+
+## Consecuencias
+
+### Positivas
+
+Alta capacidad de ingestión de eventos en tiempo real
+Mejor tolerancia a picos de tráfico
+Desacoplamiento entre productores y consumidores
+Escalabilidad horizontal para cargas variables
+Integración nativa con Azure Functions
+Adecuado para arquitecturas event-driven
+
+### Negativas
+
+ No ofrece las capacidades avanzadas de colas empresariales de Service Bus
+ Requiere servicios complementarios para flujos críticos
+ Necesita diseño cuidadoso de particiones y retención
+
+## Alternativas consideradas
+
+### Azure Service Bus
+
+**Ventajas:**
+Manejo avanzado de mensajes
+Colas y tópicos
+Dead-letter queue
+Retries y control empresarial
+
+**Desventajas:**
+ Menor capacidad para ingestión masiva de eventos
+Menor adecuación para escenarios de streaming de alto volumen
+ Puede convertirse en cuello de botella en picos de tráfico
+
+## Referencias
+Azure Event Hubs Documentation
+Azure Service Bus Documentation
+Azure Event-Driven Architecture Patterns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### ADR-02: Azure Functions vs Azure Stream Analytics
 
