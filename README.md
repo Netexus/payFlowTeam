@@ -187,7 +187,7 @@ Azure Monitor y Application Insights registran las métricas y logs del sistema.
 
 ## Evidencias obtenidas
 
-## Durante la ejecución del script se validó:
+Durante la ejecución del script se validó:
 
 ✅ Envío correcto de eventos a Event Hubs
 
