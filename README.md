@@ -122,6 +122,12 @@ PayFlow/
 
 <img width="1536" height="472" alt="c3" src="https://github.com/user-attachments/assets/3b694909-fdaf-4ab2-ab85-2a07846972cc" />
 
+<img width="527" height="506" alt="1" src="https://github.com/user-attachments/assets/afb623e3-adb4-46bd-b4c3-73c685d8fa7f" />
+<img width="524" height="509" alt="2" src="https://github.com/user-attachments/assets/c0340ec8-e5fb-4cd0-b9dd-4daac7ae70ff" />
+<img width="500" height="503" alt="3" src="https://github.com/user-attachments/assets/673f0a0b-beef-40e2-af51-b85a88f24cf3" />
+<img width="531" height="509" alt="4" src="https://github.com/user-attachments/assets/0fbdcdfb-6b47-4e81-88e9-13dafd0322ea" />
+<img width="520" height="451" alt="5" src="https://github.com/user-attachments/assets/9f74b2e5-6ef6-478a-9387-14195518dab0" />
+
 
 ## Decisiones Arquitectónicas (ADRs)
 
